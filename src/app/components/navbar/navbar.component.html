@@ -10,4 +10,7 @@
     <a [routerLink]="'/signup'"  mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon">
       Register
     </a>
+    <a *ngIf="loginUser"  (click)="logoutUser()"  mat-icon-button class="example-icon mr20 ml20" aria-label="Example icon-button with share icon">
+     LogOut
+    </a>
   </mat-toolbar>

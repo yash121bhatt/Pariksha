@@ -50,10 +50,10 @@ loginData={
              console.log(user);
              //redirect ...Admin: admin-dashbord
              //redirect ...Normal:normal-user-dashbord
-             console.log(this.login.getUserRole());
+            //  console.log(this.login.getUserRole());
              if(this.login.getUserRole() == 'ADMIN')
              {
-               console.log("Admin");
+              //  console.log("Admin");
                //admin dashboard
                 // window.location.href='/admin';
                 this.router.navigate(['/admin']);
