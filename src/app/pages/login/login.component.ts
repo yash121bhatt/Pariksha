@@ -19,7 +19,7 @@ loginData={
   }
   formSubmit()
   {
-    console.log("submit");
+  
     if(this.loginData.username.trim()=='' || this.loginData.username==null)
     {
         this.snak.open("username is required !!",'',{
@@ -47,25 +47,29 @@ loginData={
         this.login.getCurrentUser().subscribe(
            (user:any)=>{
              this.login.setUser(user);
-             console.log(user);
+            //  console.log(user);
+            //  console.log(this.login.getUserRole());
+            //  console.log(localStorage.getItem("user"));
              //redirect ...Admin: admin-dashbord
              //redirect ...Normal:normal-user-dashbord
             //  console.log(this.login.getUserRole());
              if(this.login.getUserRole() == 'ADMIN')
              {
-              //  console.log("Admin");
-               //admin dashboard
+               console.log("Admin");
+              //  admin dashboard
                 // window.location.href='/admin';
                 this.router.navigate(['/admin']);
+                // this.login.loginStatusSubject.next(true);
              }else if(this.login.getUserRole() == 'USER')
              {
                console.log("getUserNormal");
-               //normal user dashboard
+              //  normal user dashboard
               //  window.location.href='/user-dashboard';
               this.router.navigate(['/user-dashboard']);
+              // this.login.loginStatusSubject.next(true);
              }else{
                this.login.logout();
-              //  location.reload();
+               location.reload();
              }
            }
         );

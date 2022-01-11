@@ -16,7 +16,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { authInterceptorProviders } from './services/auth.interceptor';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
-import { Routes, RouterModule} from '@angular/router';
+import {  RouterModule} from '@angular/router';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { SidebarComponent } from './pages/admin/sidebar/sidebar.component';
+import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
+import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +32,11 @@ import { Routes, RouterModule} from '@angular/router';
     LoginComponent,
     HomeComponent,
     DashboardComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    ProfileComponent,
+    SidebarComponent,
+    WelcomeComponent,
+    ViewCategoriesComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,5 @@ import { Routes, RouterModule} from '@angular/router';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-function routes(routes: any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
-  throw new Error('Function not implemented.');
-}
+
 

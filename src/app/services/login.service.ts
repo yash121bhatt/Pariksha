@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ export class LoginService {
 
   url="http://127.0.0.1:8000/api/auth/"
   constructor(private http: HttpClient) { }
+
+  public loginStatusSubject=new Subject<boolean>();
 
   //current user: which is Loggedin
   public getCurrentUser()
@@ -25,6 +28,7 @@ export class LoginService {
   public loginUser(token:any)
   {
        localStorage.setItem("access_token",token);
+       this.loginStatusSubject.next(true);
        return true;
   }
 
@@ -54,6 +58,7 @@ export class LoginService {
   public setUser(user:any)
   {
      localStorage.setItem("user",JSON.stringify(user));
+    //  localStorage.setItem("username",user['username']);
   }
   //getUser
   public getUser(){

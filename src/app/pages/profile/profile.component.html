@@ -1,0 +1,45 @@
+<mat-card *ngIf="userData">
+    <h3>Your Profile Details</h3>
+    <mat-card-content> 
+      <div class="bootstrap-wrapper">
+          <div class="container">
+              <div class="container text-center">
+                  <img src="assets/img/userimg.jpg" alt="userimg" class="profile-image">
+                  <h1 class="mt20">{{userData.first_name}}  {{userData.last_name}}</h1>
+              </div>
+              <div class="row">
+                  <div class="col-md-10 offset-md-1">
+
+                    <table class="table text-center">
+                        <tr>
+                            <td>Exam ID</td>
+                            <td>{{userData.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>Username</td>
+                            <td>{{userData.username}}</td>
+                        </tr>
+                        <tr>
+                            <td>phone no.</td>
+                            <td>{{userData.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td>{{userData.user_type}}</td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>{{userData.status ? "ACTIVE" : "NOTACTIVE"}}</td>
+                        </tr>
+                    </table>
+
+                  </div>
+              </div>
+          </div>
+      </div>    
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">UPDATE</button>
+        <button mat-raised-button color="accent">SHARE</button>
+      </mat-card-actions>
+</mat-card>

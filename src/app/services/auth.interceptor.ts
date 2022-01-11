@@ -17,12 +17,11 @@ export class AuthInterceptor implements HttpInterceptor
         //add the jwt token (localStroage) request
         let autReq=req;
         const token=this.login.getToken();
-        console.log("chal raha he ki nhi ye");
         if(token!=null)
         {
-           autReq=autReq.clone({setHeaders:{Authorization:`Bearer ${token}`},
-
-        });
+           autReq=autReq.clone({
+            setHeaders:{Authorization:`Bearer ${token}`}
+            });
         }
         return next.handle(autReq);
 
