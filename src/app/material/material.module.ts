@@ -8,6 +8,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 const materialComponents = [
 
@@ -18,6 +20,8 @@ const materialComponents = [
   MatToolbarModule,
   MatIconModule,
   MatListModule,
+  MatSlideToggleModule,
+  MatSelectModule,
   MatTableModule
 ]
 

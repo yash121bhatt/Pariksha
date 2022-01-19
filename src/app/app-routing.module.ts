@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
+import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { ViewCategoriesComponent } from './pages/admin/view-categories/view-categories.component';
+import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { WelcomeComponent } from './pages/admin/welcome/welcome.component';
 
 import { HomeComponent } from './pages/home/home.component';
@@ -20,7 +23,10 @@ const routes: Routes = [
   {path:'user-dashboard',component:UserDashboardComponent,pathMatch:'full',canActivate : [NormalGuard]},
   {path:'admin',component:DashboardComponent,canActivate: [AdminGuard],
    children:[{path:'',component:WelcomeComponent},{path:'profile',component:ProfileComponent},
-   {path:'categories',component:ViewCategoriesComponent,pathMatch:'full'},]   },
+   {path:'categories',component:ViewCategoriesComponent,pathMatch:'full'},
+   {path:'addcategory',component:AddCategoryComponent,pathMatch:'full'},
+   {path:'quiz',component:ViewQuizzesComponent,pathMatch:'full'},
+   {path:'add-quiz',component:AddQuizComponent,pathMatch:'full'}, ]   },    
 ];
 
 @NgModule({
