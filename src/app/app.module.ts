@@ -24,6 +24,14 @@ import { ViewCategoriesComponent } from './pages/admin/view-categories/view-cate
 import { AddCategoryComponent } from './pages/admin/add-category/add-category.component';
 import { ViewQuizzesComponent } from './pages/admin/view-quizzes/view-quizzes.component';
 import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
+import { UpdateQuizComponent } from './pages/admin/update-quiz/update-quiz.component';
+import { ViewQuizQuestionsComponent } from './pages/admin/view-quiz-questions/view-quiz-questions.component';
+import { AddQuestionComponent } from './pages/admin/add-question/add-question.component';
+import { UpdateQuestionComponent } from './pages/admin/update-question/update-question.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { UserSidebarComponent } from './pages/user/user-sidebar/user-sidebar.component';
+import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+
 
 
 @NgModule({
@@ -43,6 +51,14 @@ import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
     AddCategoryComponent,
     ViewQuizzesComponent,
     AddQuizComponent,
+    UpdateQuizComponent,
+    ViewQuizQuestionsComponent,
+    AddQuestionComponent,
+    UpdateQuestionComponent,
+    UserSidebarComponent,
+    LoadQuizComponent,
+    
+   
   ],
   imports: [
     BrowserModule,
@@ -52,7 +68,8 @@ import { AddQuizComponent } from './pages/admin/add-quiz/add-quiz.component';
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    CKEditorModule
   ],
   exports: [RouterModule],
   providers: [authInterceptorProviders],

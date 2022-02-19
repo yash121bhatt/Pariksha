@@ -13,13 +13,15 @@
         <p>{{q.desc}}</p>
     </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button color="primary">Question</button>
+        <button [routerLink]="'/admin/view-question/' + q.id +'/' + q.title" mat-flat-button color="primary">Question</button>
         <button mat-stroked-button color="primary" class="ml20">Max Marks: {{q.max_mark}}</button>
         <button mat-stroked-button color="primary" class="ml20">Number Of Question: {{q.number_of_question}}</button>
-        <button mat-flat-button color="primary" class="ml20">Update</button>
+        <!-- <button mat-flat-button color="primary" class="ml20">Update</button> -->
         <button mat-flat-button color="primary" class="ml20"> Attempts</button>
+        <button [routerLink]="'/admin/quiz/'+ q.id" mat-fab color="primary" class="ml100"><mat-icon>update</mat-icon>
+        </button>
 
-        <button mat-fab color="warn" class="ml100"(click)="deleteQuiz(q.id)"><mat-icon>delete</mat-icon>
+        <button mat-fab color="warn" class="ml20"(click)="deleteQuiz(q.id)"><mat-icon>delete</mat-icon>
          </button>
   </mat-card-actions>
   

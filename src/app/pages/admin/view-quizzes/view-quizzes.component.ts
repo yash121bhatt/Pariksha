@@ -35,19 +35,19 @@ export class ViewQuizzesComponent implements OnInit {
 
        if(result.isConfirmed)
        {
-        this.quiz.deleteQuiz(id).subscribe(
-          (data:any)=>{
-            this.quizzes = this.quizzes.filter((quiz:any) => quiz.id !=id);
-            Swal.fire('Success','Quiz is deleted','success');
-         },
-        (error:any)=>{
-          Swal.fire('Error !!','Error in deleting quiz','error');
-        } 
-         );
-  
+          this.quiz.deleteQuiz(id).subscribe(
+        (data:any)=>{
+          this.quizzes = this.quizzes.filter((quiz:any) => quiz.id !=id);
+          Swal.fire('Success','Quiz is deleted','success');
+       },
+      (error:any)=>{
+        Swal.fire('Error !!','Error in deleting quiz','error');
+      } 
+       );
+
        }
 
-     })
+     });
   }
 
 }

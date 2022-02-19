@@ -24,4 +24,19 @@ url="http://127.0.0.1:8000/api/auth/";
   {
     return this.http.delete(this.url + 'delete-quiz/'+ id);
   }
+
+  public getQuiz(id:any)
+  {
+    return this.http.get(this.url + 'get-quiz/'+ id);
+  }
+  
+   public updateQuiz(quiz:any)
+   {
+    //  console.log("this is a my data");
+    // console.log(quiz);
+      return this.http.post(this.url + 'update-quiz/' + quiz.id, quiz);
+   }
+
+   
+
 }
