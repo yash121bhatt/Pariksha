@@ -27,8 +27,14 @@ url="http://127.0.0.1:8000/api/auth/";
 
   public getQuiz(id:any)
   {
-    return this.http.get(this.url + 'get-quiz/'+ id);
+    return this.http.get(this.url + 'edit-quiz/'+ id);
   }
+    
+  public getQuiz2(catName:any)
+  {
+    return this.http.get(this.url + 'get-quiz/'+ catName); 
+  }
+  
   
    public updateQuiz(quiz:any)
    {
