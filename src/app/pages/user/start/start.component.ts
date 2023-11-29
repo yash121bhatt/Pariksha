@@ -47,4 +47,12 @@ export class StartComponent implements OnInit {
     });
   }
 
+  // givenAnswerFun(answer:any, question:any, index:any) {
+  //    let asignQuestion:any = this.question;
+  //    asignQuestion[index].givenAnswer = answer;
+  //    console.log(asignQuestion)
+
+
+  // }
+
 }
