@@ -15,7 +15,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { InstructionsComponent } from './pages/user/instructions/instructions.component';
 import { LoadQuizComponent } from './pages/user/load-quiz/load-quiz.component';
+import { StartComponent } from './pages/user/start/start.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/admin.guard';
 import { NormalGuard } from './services/normal.guard';
@@ -26,7 +28,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent,pathMatch:'full'},
   {path:'login',component:LoginComponent,pathMatch:'full'},
   {path:'user-dashboard',component:UserDashboardComponent,canActivate : [NormalGuard],
-children:[{path:':catName',component:LoadQuizComponent}]},
+children:[{path:':catName',component:LoadQuizComponent},
+{path:'instruction/:title',component:InstructionsComponent},]},
   {path:'admin',component:DashboardComponent,canActivate: [AdminGuard],
    children:[{path:'',component:WelcomeComponent},{path:'profile',component:ProfileComponent},
    {path:'categories',component:ViewCategoriesComponent,pathMatch:'full'},
@@ -36,7 +39,8 @@ children:[{path:':catName',component:LoadQuizComponent}]},
   {path:'quiz/:id',component:UpdateQuizComponent,pathMatch:'full'},
   {path:'view-question/:id/:title',component:ViewQuizQuestionsComponent,pathMatch:'full'},
   {path:'add-question/:id/:title',component:AddQuestionComponent,pathMatch:'full'},
-  {path:'update-question/:id/:title',component:UpdateQuestionComponent,pathMatch:'full'}, ]   },    
+  {path:'update-question/:id/:title',component:UpdateQuestionComponent,pathMatch:'full'}, ]   }, 
+  {path:'start/:id',component:StartComponent,canActivate:[NormalGuard]}   
 ];
 
 @NgModule({

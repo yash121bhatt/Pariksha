@@ -15,6 +15,7 @@ export class QuestionService {
   {
      return this.http.get(this.url + 'list-ques/'+qid);
   }
+
   
   //Add Question
 
@@ -34,8 +35,8 @@ export class QuestionService {
 
   public updateQuestion(uQID:any,id:any)
   {
-    console.log("hello");
-    console.log(id);
+    // console.log("hello");
+    // console.log(id);
     return this.http.post(this.url + 'update-ques/'+id,uQID);
   }
 

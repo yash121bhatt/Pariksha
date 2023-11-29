@@ -17,7 +17,7 @@
                         <mat-label>Write question content</mat-label>
                         <textarea [(ngModel)]="question.content" required="" rows="8"  matInput placeholder="Enter Here" name="content" ></textarea>
                       </mat-form-field> -->
-                      <ckeditor [(ngModel)]="question.content" [editor]="Editor"  data="<h1> Write your question </h1>" name="content" ></ckeditor>
+                      <ckeditor [(ngModel)]="question.content" [editor]="Editor"  data="<p> Write your question </p>" name="content" ></ckeditor>
 
                       <!--Options-->
                       <div class="row">
